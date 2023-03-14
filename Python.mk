@@ -80,5 +80,5 @@ build:
 	${POETRY_EXECUTABLE} build
 
 publish: build
-	${POETRY_EXECUTABLE} publish --dry-run
+	${POETRY_EXECUTABLE} publish
 

@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "poetry-dev-version"
-version = "0.1.0"
+version = "0.1.1"
 description = "Poetry plugin for development versions"
 authors = ["alfred82santa <alfred82santa@gmail.com>"]
 readme = "README.rst"
@@ -29,6 +29,9 @@ isort = "^5.12.0"
 [tool.poetry.group.dev.dependencies]
 autoflake = "^2.0.2"
 ruff = "^0.0.255"
+
+[tool.poetry.plugins."poetry.plugin"]
+demo = "poetry_dev_version.plugin:DevVersionPlugin"
 
 [build-system]
 requires = ["poetry-core"]
