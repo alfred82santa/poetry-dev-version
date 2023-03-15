@@ -42,11 +42,7 @@ class DevVersionCommand(Command):
             None,
             "Do not update pyproject.toml file",
         ),
-        option(
-            "local",
-            None,
-            "Add local string",
-        ),
+        option("local", None, "Add local string", flag=False),
     ]
 
     help = """\
