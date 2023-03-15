@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "poetry-dev-version"
-version = "0.1.1"
+version = "0.1.3"
 description = "Poetry plugin for development versions"
 authors = ["alfred82santa <alfred82santa@gmail.com>"]
 readme = "README.rst"
@@ -12,10 +12,10 @@ repository = "https://github.com/alfred82santa/poetry-dev-version"
 python = ">=3.8.1,<4.0"
 poetry = "^1.4.0"
 cleo = "^2.0.1"
-absolufy-imports = "^0.3.1"
 
 
 [tool.poetry.dev-dependencies]
+absolufy-imports = "^0.3.1"
 pytest = "^7.2.1"
 pytest-cov = "^4.0.0"
 black = "^23.1.0"
@@ -24,14 +24,10 @@ autopep8 = "^2.0.1"
 autoflake8 = "^0.4.0"
 flake8 = "^6.0.0"
 isort = "^5.12.0"
-
-
-[tool.poetry.group.dev.dependencies]
-autoflake = "^2.0.2"
 ruff = "^0.0.255"
 
-[tool.poetry.plugins."poetry.plugin"]
-demo = "poetry_dev_version.plugin:DevVersionPlugin"
+[tool.poetry.plugins."poetry.application.plugin"]
+dev-version = "poetry_dev_version:DevVersionPlugin"
 
 [build-system]
 requires = ["poetry-core"]
