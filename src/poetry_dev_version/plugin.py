@@ -3,7 +3,6 @@ from poetry.plugins.application_plugin import ApplicationPlugin
 from .command import DevVersionCommand
 
 
-
 def factory() -> DevVersionCommand:
     return DevVersionCommand()
 
