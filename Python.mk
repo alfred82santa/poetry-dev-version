@@ -39,14 +39,13 @@ black:
 	${POETRY_RUN} black .
 
 beautify-imports:
-	${POETRY_RUN} autoflake --remove-all-unused-imports -j 4 --in-place --remove-duplicate-keys -r ${PACKAGE_DIR} ${PACKAGE_TESTS_DIR}
 	${POETRY_RUN} isort --profile black ${ISORT_PARAMS} ${PACKAGE_DIR}
 	${POETRY_RUN} isort --profile black ${ISORT_PARAMS} ${PACKAGE_TESTS_DIR}
 	${POETRY_RUN} absolufy-imports --never $(shell find ${PACKAGE_DIR} | grep .py$)
 	${POETRY_RUN} absolufy-imports --never $(shell find ${PACKAGE_TESTS_DIR} | grep .py$)
 
 beautify: beautify-imports black
-	
+
 lint:
 	@echo "Running flake8 tests..."
 	${POETRY_RUN} ruff ${PACKAGE_DIR} ${PACKAGE_TESTS_DIR}
@@ -81,4 +80,3 @@ build:
 
 publish: build
 	${POETRY_EXECUTABLE} publish
-
