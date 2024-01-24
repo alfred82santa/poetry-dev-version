@@ -1,17 +1,17 @@
 [tool.poetry]
 name = "poetry-dev-version"
-version = "0.1.4"
+version = "0.1.5"
 description = "Poetry plugin for development versions"
 authors = ["alfred82santa <alfred82santa@gmail.com>"]
 readme = "README.rst"
-packages = [{include = "poetry_dev_version", from = "src"}]
+packages = [{ include = "poetry_dev_version", from = "src" }]
 repository = "https://github.com/alfred82santa/poetry-dev-version"
 
 
 [tool.poetry.dependencies]
 python = ">=3.8.1,<4.0"
-poetry = "^1.4.0"
-cleo = "^2.0.1"
+poetry = ">=1.4.0"
+cleo = ">=2.0.1"
 
 
 [tool.poetry.dev-dependencies]
